@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="HappyMall:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/HappyMall_war</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="HappyMall" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="HappyMall/web/Web" />
+    </root>
+  </artifact>
+</component>
