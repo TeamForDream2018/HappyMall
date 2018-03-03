@@ -28,3 +28,17 @@ export default function request(url, options) {
     .then(data => ({ data }))
     .catch(err => ({ err }));
 }
+
+
+/*
+fetch方式 返回mock数据
+export default function request(url, options) {
+       return fetch(url,options).then(function(response) {
+		              return response.json().then(function(data){      //将response进行json格式化
+		                  return data.data;
+		              })
+		      }).catch(function(e) {
+                     return e;
+		      });
+}
+*/

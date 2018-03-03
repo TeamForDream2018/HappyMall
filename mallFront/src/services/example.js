@@ -1,5 +1,10 @@
 import request from '../utils/request';
 
-export function query() {
-  return request('/api/users');
+export function loadPicsInfo(params){
+	return request("/pics",{   //请求头设置
+          method:'GET',
+          mode:'cors',
+          credentials: 'include',
+          body:params
+	})
 }
