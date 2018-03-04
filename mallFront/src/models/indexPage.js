@@ -1,18 +1,18 @@
-import * as actions from "../services/indePage"
+import * as actions from "../services/indexPage"
 
 export default {
 
   namespace: 'indexPage',
 
   state: {
-      showlist:[],
+      data:[],
   },
 
   subscriptions: {
     setup({ dispatch, history }) {  // eslint-disable-line
         return history.listen(({pathname,query})=>{
             if(pathname === "/"){
-                dispatch({ type: 'fetchThink'});
+//                dispatch({ type: 'fetchThink'});
             }
         })
     },
@@ -24,7 +24,7 @@ export default {
 //        const {showlist} = payload;
         //请求资源
 //        const showlist = yield call(actions.loadBanInfo)
-        yield put({ type: 'updateState',payload:{showlist}});
+//        yield put({ type: 'updateState',payload:{showlist}});
     },
   },
 

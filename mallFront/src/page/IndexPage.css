@@ -1,29 +1,15 @@
-
-.normal {
-  font-family: Georgia, sans-serif;
-  margin-top: 3em;
-  text-align: center;
+/*页面*/
+.content{
+    margin:0;
+    padding:0;
+    height:100%;
+    width:100%;
+    background: #eee;
 }
-
-.title {
-  font-size: 2.5rem;
-  font-weight: normal;
-  letter-spacing: -1px;
-}
-
-.welcome {
-  height: 328px;
-  background: url(../assets/yay.jpg) no-repeat center 0;
-  background-size: 388px 328px;
-}
-
-.list {
-  font-size: 1.2em;
-  margin-top: 1.8em;
-  list-style: none;
-  line-height: 1.5em;
-}
-
-.list code {
-  background: #f7f7f7;
+/*区块样式*/
+.common_cont{
+    width: 1080px;
+    margin: 0 auto;
+    height: 2.5em;
+    box-sizing: border-box;
 }
