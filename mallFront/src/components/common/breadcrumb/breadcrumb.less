@@ -1,0 +1,27 @@
+.breadCont{display: flex;
+    list-style: none;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(255, 0, 0, 0)), to(#ff0000));
+    background: linear-gradient(to right, #ddd, rgba(255, 0, 0, 0));
+    margin: .3rem;
+    box-shadow: 0 0 1px linear-gradient(to right, #ddd, rgba(255, 0, 0, 0));
+    line-height: 1.5rem;
+}
+
+.liHeader{
+	width: 10px;
+}
+
+.arrow{
+    padding:0 .5rem;
+    animation: arrowshine 1s infinite;
+    font-size:1rem;
+}
+
+.breadcrumbname{
+    animation: arrowshine 1s infinite;
+}
+
+@keyframes arrowshine{
+    from{}
+    to{ text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 30px #000, 0 0 50px #000;}
+}

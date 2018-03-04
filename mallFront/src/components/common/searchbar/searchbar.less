@@ -1,0 +1,68 @@
+.main_content{
+    background: black;
+    height: 3rem;
+    padding: 0 6rem;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    width: 1080px;
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+}
+
+.search_img_icon{
+    background: url("/imgs/search_bar.jpg");
+    height: 100%;
+    width:6rem;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.search_cont{
+    height: 100%;
+    width:30rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding:.1rem 0;
+}
+
+.searchBox{
+    background: #fff;
+    height: 90%;
+    width: 50%;
+    line-height: 2rem;
+    margin: auto 0;
+    border-radius: .5rem;
+}
+
+.searchbtn_common{
+    width: 15%;
+    margin-left: .5rem;
+    color: #fff;
+    font-size: 2.5rem;
+    text-align: center;
+    line-height: 3rem;
+}
+
+.searchBtn{
+    .searchbtn_common();
+}
+
+.searchBtn_active{
+    .searchbtn_common();
+    animation:shake_searchbtn .5s infinite;
+    animation-direction:alternate;
+}
+
+.searchBtn,.searchBtn_active :hover{
+    cursor: pointer;
+}
+
+@keyframes shake_searchbtn{
+    from{color: #fff;transform: rotateX(0) rotateY(0) rotateZ(0)}
+    to{color:red;transform: rotateX(30deg) rotateY(30deg) rotateZ(360deg)}
+}
