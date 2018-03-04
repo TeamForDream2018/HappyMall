@@ -15,7 +15,8 @@ function IndexPage() {
   );
 }
 
-IndexPage.propTypes = {
-};
+function mapStatetoProps({indexPage}){
+    return {indexPage}
+}
 
-export default connect()(IndexPage);
+export default connect(mapStatetoProps)(IndexPage);
