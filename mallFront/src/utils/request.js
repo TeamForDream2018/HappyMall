@@ -21,17 +21,18 @@ function checkStatus(response) {
  * @param  {object} [options] The options we want to pass to "fetch"
  * @return {object}           An object containing either "data" or "err"
  */
-export default function request(url, options) {
-  return fetch(url, options)
-    .then(checkStatus)
-    .then(parseJSON)
-    .then(data => ({ data }))
-    .catch(err => ({ err }));
-}
+//export default function request(url, options) {
+//  return fetch(url, options)
+//    .then(checkStatus)
+//    .then(parseJSON)
+//    .then(data => ({ data }))
+//    .catch(err => ({ err }));
+//}
 
 
 /*
 fetch方式 返回mock数据
+*/
 export default function request(url, options) {
        return fetch(url,options).then(function(response) {
 		              return response.json().then(function(data){      //将response进行json格式化
@@ -41,4 +42,4 @@ export default function request(url, options) {
                      return e;
 		      });
 }
-*/
+

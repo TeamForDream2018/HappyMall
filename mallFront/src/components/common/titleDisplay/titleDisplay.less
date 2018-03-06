@@ -1,0 +1,31 @@
+.titleBar{
+    display: flex;
+    flex-direction: row;
+    background: antiquewhite;
+}
+
+.titles{
+    cursor:pointer;
+    margin-left: 1rem;
+    position:relative;
+}
+
+.circle{
+    width: .5rem;
+    height: .5rem;
+    background: deepskyblue;
+    position: absolute;
+    top: calc(~"50% - .25rem");
+    left: calc(~"50% - .25rem");
+    border-radius: 1rem;
+    animation: scaleout 1.3s infinite ease-in-out;
+}
+
+@keyframes scaleout {
+    0% {
+        transform: scale(0);
+    } 100% {
+          transform: scale(4);
+          opacity: 0;
+      }
+}
