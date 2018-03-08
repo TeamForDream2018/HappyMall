@@ -24,6 +24,7 @@ export default {
   effects: {
     *getInitData({ payload }, { call,put,select }) {  // eslint-disable-line
         let ret = yield call(actions.getInitMenuData,null)
+        console.log(ret)
         if(ret && ret.menuList.length>0){
           yield put({
                type:"updateState",
