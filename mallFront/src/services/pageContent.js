@@ -9,3 +9,11 @@ export function getInitMenuData(params){
 	})
 }
 
+export function getBannerList(params){
+	return request("/bannerList",{   //请求头设置
+          method:'POST',
+          mode:'cors',
+          credentials: 'include',
+          body:params
+	})
+}

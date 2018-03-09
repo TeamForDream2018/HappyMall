@@ -1,0 +1,44 @@
+.banner_content{
+    height:15rem;
+    border: 1rem solid #abc;
+    position: relative;
+}
+//显示banner
+.show{
+   display:block;
+}
+//影藏banner
+.hide{
+   display: none;
+}
+
+.arrow{
+    position: absolute;
+    z-index: 1;
+    height:100%;
+    background-color:transparent;
+    width:10rem;
+}
+
+.left_arrow {
+    .arrow();
+    left:0;
+}
+
+.right_arrow{
+   .arrow();
+    right:0;
+}
+
+.left_arrow,.right_arrow:hover{
+    cursor: pointer;
+}
+
+.step{
+    position: absolute;
+    z-index: 2;
+    font-size: 2rem;
+    left:calc(~"50% - 1rem");
+    top:calc(~"50% - 1rem");
+    color:#fff;
+}

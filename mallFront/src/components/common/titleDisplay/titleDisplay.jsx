@@ -50,7 +50,6 @@ const TitleDisplay = ({
         titles.push(div_title)
     })
 
-    console.log(titles,"asd")
      return(
             <div className={styles.titleBar}>
              {titles}

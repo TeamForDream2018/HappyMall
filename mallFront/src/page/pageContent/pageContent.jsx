@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'dva';
 
 import TitleDisplay from '../../components/common/titleDisplay/titleDisplay';
+import Banner from '../../components/common/banner/banner';
 import * as styles from './pageContent.less';
 
 class PageCont extends React.Component{
@@ -22,11 +23,15 @@ class PageCont extends React.Component{
     }
 
     render(){
-        let {menuList,title_active_id} = this.props.pageContent
-
+        let {menuList,title_active_id,bannerList,bannerKey} = this.props.pageContent
+        let {dispatch} = this.props;
+        let bannerProps = {
+            bannerList,bannerKey,dispatch,
+        }
         return(
             <div className={styles.pageCont}>
                 <TitleDisplay menuList={menuList} title_active_id={title_active_id} activeTitleKey={this.activeTitleKey}/>
+                <Banner bannerProps={bannerProps}/>
             </div>
         )
     }
