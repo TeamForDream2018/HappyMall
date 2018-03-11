@@ -14,6 +14,21 @@ const TitleDisplay = ({
         activeTitleKey(e.target.id);
     }
 
+    function changePage(e){
+        let id_index = e.target.id.split("_")[2];
+        let par_div = document.getElementById("par_cont_"+id_index);
+        par_div.childNodes[0]["style"]["display"] = "none";
+        par_div.childNodes[1]["style"]["display"] = "block";
+    }
+
+    function returnPage(e){
+        let id_index = e.target.id.split("_")[2];
+        let par_div = document.getElementById("par_cont_"+id_index);
+        par_div.classList.remove("pagechange");
+        par_div.childNodes[1]["style"]["display"] = "none";
+        par_div.childNodes[0]["style"]["display"] = "block";
+    }
+
     if(!title_active_id){
         title_active_id = "titles_0";
     }
@@ -27,15 +42,17 @@ const TitleDisplay = ({
         }
 
         let child_menu = [];
+        let par_index = index + "" ;
         item && item.children.length>0 && item.children.map((item,index)=>{
 
-            let child_cont = <div>
-                <img style={{width:"16rem"}} src={item.imgurl} alt="简介"/>
+            let child_cont = <div className={styles.page_intro} id={"par_cont_"+ par_index + index}>
+                <img id={"intro_front_"+par_index + index} className={styles.frontface} src={item.imgurl} alt="简介"/>
+                <div className={styles.backface} id={"intro_back_"+par_index + index}></div>
             </div>
 
             item && child_menu.push(<div key={"menu_content_"+index} className={styles.menu_child_cont}><div key={"child_menu_"+index} className={styles.child_menu}>
                                         {item.name}
-                                    </div><Popover trigger="hover" key={"child_cont_"+index} content={child_cont} title="英雄简介"><img key={"menu_cont_img"+index} className={styles.touxiang} src={item.imgurl} alt="头像"/></Popover></div>)
+                                    </div><Popover autoAdjustOverflow={false} placement="bottom" trigger="hover" key={"child_cont_"+index} content={child_cont} title="英雄简介"><img key={"menu_cont_img"+index} className={styles.touxiang} src={item.imgurl} alt="头像"/></Popover></div>)
         })
 
         const content = (

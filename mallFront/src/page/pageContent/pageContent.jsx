@@ -15,7 +15,7 @@ class PageCont extends React.Component{
 
     activeTitleKey =(key)=> {
         this.props.dispatch({
-            type:"pageContent/updateState",
+            type:"pageContent/updateActiveKey",
             payload:{
                 title_active_id:key,
             }

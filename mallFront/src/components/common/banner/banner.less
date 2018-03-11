@@ -1,44 +1,136 @@
 .banner_content{
     height:15rem;
-    border: 1rem solid #abc;
+    border: 1rem solid rgba(170,187,204,.5);
     position: relative;
 }
+
+//定位banner图
+.posi_fixed{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+}
+
 //显示banner
 .show{
-   display:block;
+    opacity:1;
+    transition: opacity 3s;
+    .posi_fixed()
 }
 //影藏banner
 .hide{
-   display: none;
+    opacity: 0;
+    transition: opacity 3s;
+    .posi_fixed()
 }
 
+
+.posi_fixed1{
+    position:absolute;
+    left:-100%;
+    top:0;
+    width:calc(~"100% - 20rem");
+}
+
+.show1{
+    opacity: 1;
+    left:10rem!important;
+    transform: scale(1);
+    transition: all  3s;
+    .posi_fixed1();
+}
+
+.hide1{
+    opacity: 0;
+    left:100%!important;
+    transform: scale(0);
+    transition:all  3s;
+    .posi_fixed1();
+}
+
+
+//列表展示
+.pre_show{
+    height: 30%;
+    width:103%;
+    margin:0 auto;
+    position:absolute;
+    bottom:-4.9rem;
+    left:-1.5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: #abc;
+}
+//列表项
+.listitem_static{
+    box-sizing: border-box;
+    border: 2px solid #513;
+}
+
+.listitem_active{
+    box-sizing: border-box;
+    border: 2px solid red;
+}
+
+.listitem:hover{
+    cursor: pointer;
+    transform: scale(1.5);
+    transition: transform 1s;
+    z-index: 1;
+}
+
+
+.mask{
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+.mask,.listitem_mask_static,.listitem_mask_active,.show,.hide:hover{
+    cursor: pointer;
+}
+
+.listitem_mask_static{
+    .mask();
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, .5);
+    transition: background 5s;
+}
+.listitem_mask_active{
+    .mask();
+    left: 0;
+    top: 0;
+    transition: background 5s;
+}
+
+
+//箭头展示
 .arrow{
     position: absolute;
     z-index: 1;
-    height:100%;
-    background-color:transparent;
-    width:10rem;
+    top:calc(~"50% - 1rem")
 }
 
 .left_arrow {
     .arrow();
-    left:0;
+    left:4rem;
+
 }
 
 .right_arrow{
    .arrow();
-    right:0;
-}
-
-.left_arrow,.right_arrow:hover{
-    cursor: pointer;
+    right:4rem;
 }
 
 .step{
     position: absolute;
     z-index: 2;
-    font-size: 2rem;
-    left:calc(~"50% - 1rem");
-    top:calc(~"50% - 1rem");
+    font-size: 1rem;
     color:#fff;
+    cursor: pointer;
+    background: rgba(0, 0, 0, .5);
+    border-radius: 1rem;
+    padding: .5rem;
 }

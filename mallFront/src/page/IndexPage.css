@@ -8,7 +8,7 @@
 }
 /*nav样式*/
 .common_cont{
-    width: 1080px;
+    width: 100%;
     margin: 0 auto;
     height: 2.5em;
     box-sizing: border-box;
@@ -19,8 +19,8 @@
 
 /*pagecont样式*/
 .page_cont{
-    width: 1080px;
+    width: 100%;
     margin: 0 auto;
-    height: 4em;
+    height: auto;
     box-sizing: border-box;
 }
