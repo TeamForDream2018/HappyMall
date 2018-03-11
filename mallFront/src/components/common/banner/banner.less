@@ -1,7 +1,8 @@
 .banner_content{
-    height:15rem;
+    height:25rem;
     border: 1rem solid rgba(170,187,204,.5);
     position: relative;
+    overflow: hidden;
 }
 
 //定位banner图
@@ -52,12 +53,10 @@
 
 //列表展示
 .pre_show{
-    height: 30%;
-    width:103%;
+    height: 100%;
+    width:100%;
     margin:0 auto;
-    position:absolute;
-    bottom:-4.9rem;
-    left:-1.5%;
+    position:relative;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -74,7 +73,7 @@
     border: 2px solid red;
 }
 
-.listitem:hover{
+.listitem_active:hover{
     cursor: pointer;
     transform: scale(1.5);
     transition: transform 1s;
@@ -133,4 +132,17 @@
     background: rgba(0, 0, 0, .5);
     border-radius: 1rem;
     padding: .5rem;
+}
+
+//显示预览框的样式
+.pre_show_little{
+    position: relative;
+    width:100%;
+    height:6rem;
+}
+
+.homeSeting{
+    .arrow();
+    left:0;
+    top:0!important;
 }

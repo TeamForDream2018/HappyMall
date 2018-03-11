@@ -1,9 +1,12 @@
 import React from 'react';
+
+import { connect } from 'dva';
 import {Icon,Input,message, Popover } from "antd";
 
 import * as styles from './titleDisplay.less';
 
 const TitleDisplay = ({
+        dispatch,
         menuList,
         title_active_id,
         activeTitleKey,
@@ -29,6 +32,15 @@ const TitleDisplay = ({
         par_div.childNodes[0]["style"]["display"] = "block";
     }
 
+    function getTouXiangIndex(e){
+        dispatch({
+            type:"pageContent/updateState",
+            payload:{
+                bannerKey:e.target.id,
+            },
+        })
+    }
+
     if(!title_active_id){
         title_active_id = "titles_0";
     }
@@ -52,7 +64,8 @@ const TitleDisplay = ({
 
             item && child_menu.push(<div key={"menu_content_"+index} className={styles.menu_child_cont}><div key={"child_menu_"+index} className={styles.child_menu}>
                                         {item.name}
-                                    </div><Popover autoAdjustOverflow={false} placement="bottom" trigger="hover" key={"child_cont_"+index} content={child_cont} title="英雄简介"><img key={"menu_cont_img"+index} className={styles.touxiang} src={item.imgurl} alt="头像"/></Popover></div>)
+                                    </div><Popover autoAdjustOverflow={false} placement="bottom" trigger="hover" key={"child_cont_"+index} content={child_cont} title="英雄简介"><img
+                                    onClick={getTouXiangIndex} id={index} key={"menu_cont_img"+index} className={styles.touxiang} src={item.imgurl} alt="头像"/></Popover></div>)
         })
 
         const content = (
@@ -65,6 +78,7 @@ const TitleDisplay = ({
             </div></Popover>
 
         titles.push(div_title)
+
     })
 
      return(
@@ -74,4 +88,8 @@ const TitleDisplay = ({
     )
 }
 
-export default TitleDisplay;
+function mapStatetoProps({pageContent}){
+    return {pageContent};
+}
+
+export default connect(mapStatetoProps)(TitleDisplay);
