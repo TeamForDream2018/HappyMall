@@ -1,0 +1,76 @@
+.listTitle{
+    line-height: 3rem;
+    font-size: 1rem;
+    font-family:fantasy;
+    font-weight: bold;
+    border-bottom: .3rem solid black;
+    border-top: .3rem solid black;
+    display: flex;
+    justify-content: center;
+    animation: backchange 2s both;
+}
+
+@keyframes backchange{
+    0%{
+        width:0;
+        background-color: #eee;
+    }
+    100%{
+        width:100%;
+        background-color:bisque;
+    }
+}
+.fontstyle{
+    height: 100%;
+    padding: 0 1rem;
+    position: relative;
+    animation: poschange 2s both;
+}
+
+@keyframes poschange{
+    0{right:0}
+    50%{
+        left:0;
+        transform: rotateY(0);
+        color:bisque;
+    }
+    100%{
+        left:calc(~"50% - 6rem");
+        transform: rotateY(360deg);
+        color:red;
+    }
+}
+
+.card1{
+    margin-left: 1rem;
+    width:10rem!important;
+    height:10rem!important;
+}
+
+.goodsdisplay{
+    display: flex;
+    padding-top: 1rem;
+     :global(.ant-card-body){
+        text-align: center;
+        padding:.5rem!important;
+    }
+}
+
+.descrip{
+
+}
+
+.mask{
+    width: 101%;
+    height: 101%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    display: none;
+}
+
+:global(.addmask){
+    opacity: 0.6;
+    background: black;
+}
