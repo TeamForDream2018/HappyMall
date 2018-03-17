@@ -4,7 +4,7 @@ import {Card} from "antd";
 import * as styles from './displayarea.less';
 
 const { Meta } = Card;
-class DisplayArea extends React.Component{
+class DisplayArea2 extends React.Component{
     constructor(props){
         super(props);
     }
@@ -57,7 +57,8 @@ class Title extends React.Component{
         let capArr = [];
         if(title){
             for(var i = 0;i<title.length;i++){
-                capArr.push(<div className={styles.fontstyle} key={"titlespan_"+i}>{title[i]}</div>);
+                let current_style_name = "title_jump_" + i;
+                capArr.push(<div className={styles[current_style_name]} key={"titlespan_"+i}>{title[i]}</div>);
             }
         }
         return(
@@ -69,4 +70,4 @@ class Title extends React.Component{
         )
     }
 }
-export default DisplayArea;
+export default DisplayArea2;

@@ -74,3 +74,61 @@
     opacity: 0.6;
     background: black;
 }
+
+.title_jump{
+    font-size:1rem;
+    padding:0 1rem;
+    line-height: 2rem;
+}
+.title_jump_0{
+    .title_jump();
+    position: relative;
+    animation: jump 1s linear -.2s infinite alternate;
+}
+
+.title_jump_1{
+    .title_jump();
+    position: relative;
+    animation: jump 1s linear 0s infinite alternate;
+}
+
+.title_jump_2{
+    .title_jump();
+    position: relative;
+    animation: jump 1s linear 0.2s infinite alternate;
+}
+
+.title_jump_3{
+    .title_jump();
+    position: relative;
+    animation: jump 1s linear 0.4s infinite alternate;
+}
+
+.title_jump_4{
+    .title_jump();
+    position: relative;
+    animation: jump 1s linear 0.6s infinite alternate;
+}
+
+.title_jump_5{
+    .title_jump();
+    position: relative;
+    animation: jump 1s linear 0.8s infinite alternate;
+}
+
+//样式2
+    @keyframes jump
+    {
+        0%{
+            top:0px;
+            color:red;
+        }
+        50%{
+            top:-10px;
+            color:green;
+        }
+        100%{
+            top:10px;
+            color:blue;
+        }
+    }

@@ -8,6 +8,7 @@ import TitleDisplay from '../../components/common/titleDisplay/titleDisplay';
 import Banner from '../../components/common/banner/banner';
 import * as styles from './pageContent.less';
 import DisplayArea from '../../components/common/displayarea/displayarea';
+import DisplayArea2 from '../../components/common/displayarea/displayarea2';
 
 var Animate = require('rc-animate');
 var TweenOneGroup = TweenOne.TweenOneGroup;
@@ -41,7 +42,8 @@ class PageCont extends React.Component{
                     <TweenOneGroup animation={{"type":"from"}}><TitleDisplay key="b" menuList={menuList} title_active_id={title_active_id} activeTitleKey={this.activeTitleKey}/></TweenOneGroup>
                     <Banner key="c" bannerProps={bannerProps}/>
                     <ScrollOverPack key="pageTwo" playScale={0.5} animation={{ease:"easeInQutQuad"}} style={{height:"100vh"}}>
-                       <DisplayArea lists={menuList[0]} key="displayArea"/>
+                        <DisplayArea lists={menuList[0]} key="displayArea"/>
+                        <DisplayArea2 lists={menuList[0]} key="displayArea2"/>
                     </ScrollOverPack>
                  </div>
         )
