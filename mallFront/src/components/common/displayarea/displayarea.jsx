@@ -25,20 +25,29 @@ class DisplayArea extends React.Component{
         let type = "1";
         //样式控制
         lists && lists.children && lists.children.length>0 && lists.children.map((item,index)=>{
-
+            if(index >= 8){//首页最多展示8件物品
+               return;
+            }
             renderList.push(
                 <Card key={"card_"+index}
                     className={styles.card1}
                     hoverable
                     style={{ width: 240 }}
-                    cover={<div><img style={{width:"10rem"}} onMouseEnter={this.hoverEnter} id={"card_"+index} alt="图片" src={item.imgurl} /> <div onMouseOut={this.hoverOut} id={"mask_"+index} className={styles.mask}></div></div>}
+                    cover={<div><img style={{width:"10rem"}} onMouseEnter={this.hoverEnter} id={"card_"+index} alt="图片" src={item.imgurl} /> <div onMouseOut={this.hoverOut} id={"mask_"+index} className={styles.mask}>
+                            {item.name}</div></div>}
                   >
-                    <Meta className={styles.descrip}
-                      description={item.name}
-                    />
                 </Card>
             )
         })
+        //设置查看详情样式
+        renderList && renderList.length>0 && renderList.push(
+            <div className={styles.showMore_btn} key={"showmorebtn"}>
+                <div className={styles.showMoreActive}>
+                     查看更多<p className={styles.showMoreArrow1}>></p><p className={styles.showMoreArrow2}>></p><p className={styles.showMoreArrow3}>></p>
+                </div>
+            </div>
+        )
+
         let title =lists && lists.name
         return(
             <div style={{marginTop:"2rem"}}>

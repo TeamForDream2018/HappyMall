@@ -68,6 +68,7 @@
     top: 0;
     opacity: 0;
     display: none;
+    color:#fff;
 }
 
 :global(.addmask){
@@ -132,3 +133,92 @@
             color:blue;
         }
     }
+
+//查看更多样式
+.showMore_btn{
+    position: absolute;
+    right: 0;
+    width:10rem;
+    height:10rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    >.showMoreActive{
+        width:100%;
+        text-align: right;
+        height:20%;
+        line-height: 2;
+        cursor: pointer;
+        color: cadetblue;
+        font-weight: bold;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+    }
+    >.showMoreActive:hover{
+        color:#513;
+    }
+}
+
+.showmore{
+    margin-left: .5rem;
+    line-height:1.6;
+}
+        .showMoreArrow1{
+            .showmore();
+            animation: arrow .8s linear 0s infinite alternate;
+        }
+        .showMoreArrow2{
+            .showmore();
+            animation: arrow .8s linear 0.33s infinite alternate;
+        }
+        .showMoreArrow3{
+            .showmore();
+            animation: arrow .8s linear 0.66s infinite alternate;
+        }
+@keyframes arrow{
+    0{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.5);
+    }
+}
+
+//翻页样式
+
+     .state{
+            width:10rem;
+            height:10rem;
+            margin-left: 1rem;
+            perspective: 50rem;
+        }
+        .page_cont{
+            width:10rem;
+            height:10rem;
+            transition: all 1s ;
+            transform-style: preserve-3d;
+        }
+
+        .front{
+                width:100%;
+                height:100%;
+                position: relative;
+                backface-visibility:hidden;//将背面影藏
+                >img{
+                    width:100%;
+                }
+        }
+        .back{
+                width:100%;
+                height:100%;
+                transform: rotateY(180deg) ;
+                top:0px;
+                background: #FFF;
+                position:absolute;
+                backface-visibility:hidden;//将背面影藏
+            }
+        .page_cont:hover{
+            cursor:pointer;
+        }

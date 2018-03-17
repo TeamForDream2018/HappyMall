@@ -30,7 +30,7 @@ class SearchBar extends React.Component{
     }
 
     keySerch=(e)=>{
-       e.keyCode == 13 && this.changeBtnActive();
+       e.keyCode === 13 && this.changeBtnActive();
     }
 
     render(){

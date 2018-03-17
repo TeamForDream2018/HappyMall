@@ -7,15 +7,20 @@ const { Meta } = Card;
 class DisplayArea2 extends React.Component{
     constructor(props){
         super(props);
+        this.state={
+            current_page:"",
+        }
     }
-    hoverEnter=(e)=>{
-        var mask = document.getElementById("mask_"+e.target.id.split("_")[1]);
-        mask.style.display = "block";
-        mask.classList.add("addmask");
+    changePage1=(e)=>{
+        this.setState({
+            current_page:e.target.id,
+        })
+        this.refs[e.target.id].style.transform="rotateY(180deg)";
     }
 
-    hoverOut=(e)=>{
-       e.target.style.display="none"
+    changePage2=(e)=>{
+        console.log(this.state.current_page)
+        this.refs[this.state.current_page].style.transform="rotateY(360deg)";
     }
     render(){
         const {lists} = this.props;
@@ -25,21 +30,27 @@ class DisplayArea2 extends React.Component{
         let type = "1";
         //样式控制
         lists && lists.children && lists.children.length>0 && lists.children.map((item,index)=>{
-
+            if(index >= 8){
+               return;
+            }
             renderList.push(
-                <Card key={"card_"+index}
-                    className={styles.card1}
-                    hoverable
-                    style={{ width: 240 }}
-                    cover={<div><img style={{width:"10rem"}} onMouseEnter={this.hoverEnter} id={"card_"+index} alt="图片" src={item.imgurl} /> <div onMouseOut={this.hoverOut} id={"mask_"+index} className={styles.mask}></div></div>}
-                  >
-                    <Meta className={styles.descrip}
-                      description={item.name}
-                    />
-                </Card>
+                <div key={"state_"+index} className={styles.state} >
+                    <div className={styles.page_cont} ref={"page_cont_"+index}>
+                        <div className={styles.front}><img alt="图片" src={item.imgurl} id={"page_cont_"+index} onMouseEnter={this.changePage1}/></div>
+                        <div className={styles.back} onMouseOut={this.changePage2}>{item.name}</div>
+                    </div>
+                </div>
             )
         })
         let title =lists && lists.name
+
+        renderList && renderList.length>0 && renderList.push(
+            <div className={styles.showMore_btn} key={"showmorebtn"}>
+                <div className={styles.showMoreActive}>
+                     查看更多<p className={styles.showMoreArrow1}>></p><p className={styles.showMoreArrow2}>></p><p className={styles.showMoreArrow3}>></p>
+                </div>
+            </div>
+        )
         return(
             <div style={{marginTop:"2rem"}}>
                 <Title title={title}/>

@@ -41,7 +41,7 @@ class PageCont extends React.Component{
                 <div className={styles.pageCont}>
                     <TweenOneGroup animation={{"type":"from"}}><TitleDisplay key="b" menuList={menuList} title_active_id={title_active_id} activeTitleKey={this.activeTitleKey}/></TweenOneGroup>
                     <Banner key="c" bannerProps={bannerProps}/>
-                    <ScrollOverPack key="pageTwo" playScale={0.5} animation={{ease:"easeInQutQuad"}} style={{height:"100vh"}}>
+                    <ScrollOverPack key="pageTwo" playScale={0.5} animation={{ease:"easeInQutQuad"}} style={{height:"70vh"}}>
                         <DisplayArea lists={menuList[0]} key="displayArea"/>
                         <DisplayArea2 lists={menuList[0]} key="displayArea2"/>
                     </ScrollOverPack>
