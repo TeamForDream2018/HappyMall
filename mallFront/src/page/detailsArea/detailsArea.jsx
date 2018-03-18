@@ -5,13 +5,22 @@ import * as styles from './detailsArea.less';
 
 class DetailsArea extends React.Component{
     render(){
-        const {router} = this.props;
+        const {router,details} = this.props;
+        const {listdetail} = details;
         return(
             <div>
-                detailsArea
+                {
+                    listdetail && listdetail.children && listdetail.children.map((item,index)=>{
+                        return <span key={"details_"+index}>{item.name}</span>
+                    })
+                }
             </div>
         )
     }
 }
 
-export default DetailsArea;
+function mapStatetoProps({details}){
+    return {details}
+}
+
+export default connect(mapStatetoProps)(DetailsArea);

@@ -43,7 +43,7 @@ class PageCont extends React.Component{
                     <Banner key="c" bannerProps={bannerProps}/>
                     <ScrollOverPack key="pageTwo" playScale={0.5} animation={{ease:"easeInQutQuad"}} style={{height:"70vh"}}>
                         <DisplayArea lists={menuList[0]} type="1" key="displayArea"/>
-                        <DisplayArea lists={menuList[0]} type="2" key="displayArea2"/>
+                        <DisplayArea lists={menuList[1]} type="2" key="displayArea2"/>
                     </ScrollOverPack>
                  </div>
         )

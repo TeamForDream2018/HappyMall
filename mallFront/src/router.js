@@ -13,7 +13,7 @@ function RouterConfig({pathname,history}) {
          <Route path="/" component={IndexPage} breadcrumbName="HappyMall">
                 <IndexRedirect to="/index.html" />
                 <Route path="/index.html" component={PageCont} breadcrumbName="首页"/>
-                <Route path="/details.html" component={DetailsArea} breadcrumbName="详情页面"/>
+                <Route path="/details.html" component={DetailsArea} breadcrumbName="商品列表"/>
         </Route>
     </Router>
   );
