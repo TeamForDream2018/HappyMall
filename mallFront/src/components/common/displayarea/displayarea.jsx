@@ -1,6 +1,7 @@
 import React from "react";
 
 import {Card} from "antd";
+import {Link} from 'react-router';
 import * as styles from './displayarea.less';
 
 
@@ -71,7 +72,6 @@ class DisplayArea extends React.Component{
 
     render(){
         const {lists,type} = this.props;
-
         let renderList = [];
         //样式控制
         lists && lists.children && lists.children.length>0 && lists.children.map((item,index)=>{
@@ -104,9 +104,15 @@ class DisplayArea extends React.Component{
         //设置查看详情样式
         renderList && renderList.length>0 && renderList.push(
             <div className={styles.showMore_btn} key={"showmorebtn"}>
-                <div className={styles.showMoreActive}>
-                     查看更多<p className={styles.showMoreArrow1}>></p><p className={styles.showMoreArrow2}>></p><p className={styles.showMoreArrow3}>></p>
-                </div>
+                            {/*传递多个参数的方式
+                            1.<Link to={{pathname:"details.html/aaaaaa",query: { name:"aaa" } }} activeStyle = {{"color":"red"}}></Link>
+                                会将name连接在？号后面作为get方式传递。保存在router.location.search里面
+                            2.<Link to={{pathname:"details.html/aaaaaa",state: { ...i } }} activeStyle = {{"color":"red"}}></Link>
+                                会将对象保存在 保存在router.location.state里面，并且在浏览器中不会显示*/}
+
+                     <Link className={styles.showMoreActive} to={{pathname:`details.html`,query:{categoryId:`${lists.id}`} }}>查看更多
+                         <p className={styles.showMoreArrow1}>></p><p className={styles.showMoreArrow2}>></p><p className={styles.showMoreArrow3}>></p></Link>
+
             </div>
         )
 
