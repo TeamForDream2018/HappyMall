@@ -3,12 +3,17 @@ import React from "react";
 import {Card} from "antd";
 import * as styles from './displayarea.less';
 
+
 const { Meta } = Card;
+const moment = require("moment");
+
 class DisplayArea extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            current_page:"",
+            current_page:"",//当前翻转的图片
+            latest_page:"",//最后一次翻转的图片
+            latest_time:"",
         }
     }
 
@@ -26,14 +31,42 @@ class DisplayArea extends React.Component{
     //翻页时间
 
      changePage1=(e)=>{
-        this.setState({
-            current_page:e.target.id,
-        })
-        this.refs[e.target.id].style.transform="rotateY(180deg)";
+        //获取当前时间
+//        const now = moment();
+        //相邻两次滑动的时间差
+//        let diffSecond = 0;
+        let {latest_time,latest_page} = this.state;
+        //关闭上次未关闭的图片
+        if(latest_page){
+           this.refs[latest_page].style.transform="rotateY(360deg)";
+        }
+
+/*        if(latest_time){
+            diffSecond = now.diff(latest_time,"seconds")
+        }else{//第一次滑动式，latest_time为空
+            diffSecond = 501;
+        }*/
+
+//        if(diffSecond>=0.3){
+            this.setState({
+                current_page:e.target.id,
+//                latest_time:now,
+                latest_page:e.target.id,
+            })
+            this.refs[e.target.id].style.transform="rotateY(180deg)";
+//        }
     }
 
     changePage2=(e)=>{
         this.refs[this.state.current_page].style.transform="rotateY(360deg)";
+        const {current_page,latest_page} = this.state;
+        if(latest_page){
+           this.refs[latest_page].style.transform="rotateY(360deg)";
+        }
+        this.refs[current_page].style.transform="rotateY(360deg)";
+        this.setState({
+            latest_page:current_page,
+        })
     }
 
     render(){
