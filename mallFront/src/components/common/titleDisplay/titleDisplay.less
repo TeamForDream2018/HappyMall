@@ -5,6 +5,7 @@
     height: 2rem;
     line-height: 2rem;
     padding-left: 1rem;
+    cursor: pointer;
 }
 
 .titles{
@@ -19,19 +20,20 @@
     color: black;
     font-weight: 600;
     border: 1px solid #513;
-    border-radius: 4rem;
     width: 4.5rem;
     height: 2rem;
     text-align: center;
-    animation: borderrender 1.5s both;
+    animation: borderrender 3s both;
     position:relative
 }
 
 @keyframes borderrender{
      0% {
         border-radius: 0;
-    } 100% {
+    } 50%{
         border-radius: 4rem;
+    }100%{
+        border-radius: 0;
     }
 }
 
@@ -46,32 +48,32 @@
 
 @keyframes run {
     0% {
-        left: 0;
-        top: calc(~"50% - .25rem");
+        left: -.25rem;
+        top: -.25rem;
         opacity: 0;
         transform: scale(1);
     }
     25%{
-        left: calc(~"50% - 0.25rem");
+        left: 4.25rem;
         top: -.25rem;
         opacity: .5;
         transform: scale(2);
     }
     50%{
-        left: calc(~"100% - 0.25rem");
-        top: calc(~"50% - 0.25rem");
+        left: 4.25rem;
+        top: 1.75rem;
         opacity: 1;
         transform: scale(0);
     }
     75%{
-        left: calc(~"50% - 0.25rem");
-        top: calc(~"100% - 0.25rem");
+        left: -.25rem;
+        top:  1.75rem;
         opacity: .5;
         transform: scale(2);
     }
     100% {
-        left: 0;
-        top: calc(~"50% - .25rem");
+        left: -.25rem;
+        top: -.25rem;
         opacity: 0;
         transform: scale(1);
     }
