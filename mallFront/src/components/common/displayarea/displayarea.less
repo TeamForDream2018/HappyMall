@@ -3,8 +3,6 @@
     font-size: 1rem;
     font-family:fantasy;
     font-weight: bold;
-    border-bottom: .3rem solid black;
-    border-top: .3rem solid black;
     display: flex;
     justify-content: center;
     animation: backchange 2s both;
@@ -13,31 +11,39 @@
 @keyframes backchange{
     0%{
         width:0;
-        background-color: #eee;
+        color:bisque;
     }
     100%{
         width:100%;
-        background-color:bisque;
+        color:red;
     }
 }
 .fontstyle{
     height: 100%;
     padding: 0 1rem;
     position: relative;
-    animation: poschange 2s both;
+    animation: poschange 4s  both;
 }
 
 @keyframes poschange{
-    0{right:0}
+    0{left:0}
+    25%{
+        right:0;
+        transform: rotateY(0);
+        color:bisque;
+    }
     50%{
-        left:0;
+        left:calc(~"50% - 6rem");
+        transform: rotateY(360deg);
+        color:red;
+    }
+    75%{
+        right:0;
         transform: rotateY(0);
         color:bisque;
     }
     100%{
-        left:calc(~"50% - 6rem");
-        transform: rotateY(360deg);
-        color:red;
+        left:0
     }
 }
 
