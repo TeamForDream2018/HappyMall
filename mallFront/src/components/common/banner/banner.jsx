@@ -63,6 +63,7 @@ class Banner extends React.Component{
         let show_current_banner = [];
         let title_active_id = "titles_0";
         let bannerKey = 0;
+        this.cancelTimer();
         this.props.dispatch({
             type:"pageContent/updateState",
             payload:{

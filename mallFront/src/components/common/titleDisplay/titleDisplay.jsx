@@ -17,21 +17,6 @@ const TitleDisplay = ({
         activeTitleKey(e.target.id);
     }
 
-    function changePage(e){
-        let id_index = e.target.id.split("_")[2];
-        let par_div = document.getElementById("par_cont_"+id_index);
-        par_div.childNodes[0]["style"]["display"] = "none";
-        par_div.childNodes[1]["style"]["display"] = "block";
-    }
-
-    function returnPage(e){
-        let id_index = e.target.id.split("_")[2];
-        let par_div = document.getElementById("par_cont_"+id_index);
-        par_div.classList.remove("pagechange");
-        par_div.childNodes[1]["style"]["display"] = "none";
-        par_div.childNodes[0]["style"]["display"] = "block";
-    }
-
     function getTouXiangIndex(e){
         dispatch({
             type:"pageContent/updateState",
